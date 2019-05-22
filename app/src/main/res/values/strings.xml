@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">City of Ideas</string>
+    <!--activity_project-->
+
+    <!--fragment_register-->
+    <string name="register">REGISTREER</string>
+    <string name="reg_hint_username">Gebruiksnaam</string>
+    <string name="reg_hint_email">Email</string>
+    <string name="reg_hint_street">Straat, huisnummer</string>
+    <string name="reg_hint_city">Stad</string>
+    <string name="reg_hint_post">Postcode</string>
+    <string name="reg_hint_password">Wachtwoord</string>
+    <string name="reg_hint_password_confirm">Bevestig wachtwoord</string>
+    <string name="reg_already">Al een gebruiker, log hier in.</string>
+
+    <!--fragment_login-->
+    <string name="login">LOG IN</string>
+    <string name="log_hint_email">Gebruiksnaam/Email</string>
+    <string name="log_hint_password">Wachtwoord</string>
+    <string name="log_already">Nog geen gebruiker, maak hier een account</string>
+
+    <!--fragment_profile_overview-->
+    <string name="prof_username">Hallo, User</string>
+    <string name="prof_email">Email</string>
+    <string name="prof_votes">Stemmen</string>
+    <string name="prof_likes">Likes</string>
+
+    <!--fragment_account_settings-->
+    <string name="acc_tel">Telefoonnummer</string>
+    <string name="acc_straat">Straat, huisnummer</string>
+    <string name="acc_city">Stad</string>
+    <string name="acc_post">Postcode</string>
+    <string name="acc_address">Adres</string>
+    <string name="acc_save">OPSLAAN</string>
+
+    <!--fragment_security_settings-->
+    <string name="sec_title">Wachtwoord veranderen</string>
+    <string name="sec_password_current">Huidig wachtwoord</string>
+    <string name="sec_password_new">Nieuw wachtwoord</string>
+    <string name="sec_password_confirm">Bevestig wachtwoord</string>
+    <string name="sec_save">VERANDER</string>
+
+
+    <!--fragment_project_all-->
+    <string name="project_empty">Geen projecten</string>
+
+    <!--fragment_project_pop_rec-->
+    <string name="project_pop">Populaire projecten</string>
+    <string name="project_rec">Recente projecten</string>
+
+    <string name="image">Foto</string>
+    <string name="image_upload">Foto uploaden</string>
+
+    <!--fragment_qr_code-->
+    <string name="qr_scan">Scan QR-Code</string>
+    <string name="qr_copy">Kopieer naar klembord</string>
+    <string name="qr_goTo">Ga naar website</string>
+
+    <!--comment-->
+    <string name="comment_name">Reageer</string>
+    <string name="comment_value">Reageer</string>
+    <string name="comment_date">Reageer</string>
+    <string name="comment_react">Reageer</string>
+    <string name="comments">Reacties</string>
+
+    <!--idea-->
+    <string name="idea">Idee</string>
+    <string name="idea_title">Title</string>
+    <string name="idea_desc">Beschrijving</string>
+    <string name="idea_save">Idee opslaan</string>
+    <string name="ideas">Ideeën</string>
+
+    <!--phase-->
+    <string name="phase_number">1</string>
+    <string name="phase_to">TOT</string>
+    <string name="phase_begin">Begin datum</string>
+    <string name="phase_end">Eind datum</string>
+
+    <!--Ideation-->
+    <string name="ideation">Ideation</string>
+    <string name="ideation_title">Title</string>
+    <string name="ideation_desc">Beschrijving</string>
+
+    <!--Survey-->
+    <string name="survey">VRAGENLIJST</string>
+
+    <!--platform-->
+    <string name="platform_title">Title</string>
+
+
+    <!--project-->
+    <string name="project_title">Project title</string>
+    <string name="project_content">Project content</string>
+    <string name="project_phases">Fasen</string>
+
+    <!--preferences-->
+    <string name="pref_file">treecompany.cityofideas.preference_file</string>
+    <string name="pref_login_status">treecompany.cityofideas.preference_login_status</string>
+    <string name="pref_email">treecompany.cityofideas.preference_email</string>
+
+
+</resources>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+    <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                    android:id="@+id/linearLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/circle"
+                        android:padding="10dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_register"
+                        android:tint="@color/white" />
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/register"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/linearLayout1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="30dp">
+
+                <ImageView
+                        android:id="@+id/imgView_userIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_user"
+                        android:tint="@color/white" />
+
+                <EditText
+                        android:id="@+id/reg_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/imgView_userIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_userIcon"
+                        android:background="@color/editTextBG"
+                        android:contentDescription="@string/image"
+                        android:hint="@string/reg_hint_username"
+                        android:paddingLeft="20dp"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout1"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_emailIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_email"
+                        android:tint="@color/white" />
+
+                <EditText
+                        android:id="@+id/reg_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/imgView_emailIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_emailIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_email"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout2"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_streetIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_email"
+                        android:tint="@color/white" />
+
+                <EditText
+                        android:id="@+id/reg_street"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/imgView_streetIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_streetIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_street"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout4"
+                    android:layout_width="150dp"
+                    android:layout_height="38dp"
+                    android:layout_below="@+id/relativeLayout3"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_cityIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_authentication"
+                        android:tint="@color/white"/>
+
+                <EditText
+                        android:id="@+id/reg_city"
+                        android:layout_width="112dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_cityIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_city"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" android:layout_marginBottom="0dp"
+                        android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout5"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout3"
+                    android:layout_toEndOf="@+id/relativeLayout4"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_postIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_authentication"
+                        android:tint="@color/white"/>
+
+                <EditText
+                        android:id="@+id/reg_post"
+                        android:layout_width="112dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignBottom="@+id/imgView_postIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_postIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_post"
+                        android:inputType="number"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" android:layout_marginBottom="0dp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout5"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_passwordIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_authentication"
+                        android:tint="@color/white" />
+
+                <EditText
+                        android:id="@+id/reg_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/imgView_passwordIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_passwordIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_password"
+                        android:inputType="textPassword"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:id="@+id/relativeLayout7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout6"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="15dp">
+
+                <ImageView
+                        android:id="@+id/imgView_repasswordIcon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/img_authentication"
+                        android:tint="@color/white" />
+
+                <EditText
+                        android:id="@+id/reg_password_confirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/imgView_repasswordIcon"
+                        android:layout_alignParentTop="true"
+                        android:layout_toEndOf="@+id/imgView_repasswordIcon"
+                        android:background="@color/editTextBG"
+                        android:hint="@string/reg_hint_password_confirm"
+                        android:inputType="textPassword"
+                        android:paddingStart="20dp"
+                        android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <Button
+                    android:id="@+id/reg_regbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relativeLayout7"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/register"
+                    android:textColor="@color/white" />
+
+            <Button
+                    android:id="@+id/reg_already"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/reg_regbutton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/transparent"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/reg_already"
+                    android:textAllCaps="false"
+                    android:textColor="@color/textColor"
+                    android:textSize="13sp" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

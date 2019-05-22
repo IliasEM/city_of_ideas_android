@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+                android:background="@color/white"
+             tools:context=".fragments.profile.ProfileAccountFragment">
+    <LinearLayout android:layout_marginTop="110dp" android:id="@+id/lin1" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textStyle="bold" android:layout_width="match_parent" android:layout_marginLeft="10dp" android:textSize="20sp" android:layout_height="wrap_content" android:text="@string/acc_tel"/>
+        <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="15dp">
+            <ImageView
+                    android:id="@+id/imgView_userIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/colorPrimary"
+                    android:padding="8dp"
+                    android:contentDescription="@string/image"
+                    android:src="@drawable/ic_phone"
+                    android:tint="@color/white" />
+
+            <EditText
+                    android:id="@+id/acc_phonenumber"
+                    android:layout_width="308dp"
+                    android:layout_height="47dp"
+                    android:layout_alignBottom="@+id/imgView_userIcon"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imgView_userIcon"
+                    android:background="@color/editTextBG"
+                    android:hint="@string/acc_tel"
+                    android:paddingStart="20dp"
+                    android:textSize="15sp" android:layout_marginTop="-2dp" android:layout_marginStart="0dp"
+                    android:layout_marginBottom="2dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+   <LinearLayout android:orientation="vertical" android:id="@+id/lin2" android:layout_below="@+id/lin1" android:layout_marginTop="30dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+       <TextView android:textStyle="bold" android:layout_width="match_parent" android:layout_marginStart="10dp" android:textSize="20sp" android:layout_height="wrap_content" android:text="@string/acc_address"/>
+       <RelativeLayout
+               android:id="@+id/relativeLayout3"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="30dp"
+               android:layout_marginRight="30dp"
+               android:layout_marginTop="15dp">
+
+           <ImageView
+                   android:id="@+id/imgView_streetIcon"
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:background="@color/colorPrimary"
+                   android:padding="8dp"
+                   android:contentDescription="@string/image"
+                   android:src="@drawable/icon_home"
+                   android:tint="@color/white" />
+
+           <EditText
+                   android:id="@+id/acc_street"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignBottom="@+id/imgView_streetIcon"
+                   android:layout_alignParentTop="true"
+                   android:layout_toEndOf="@+id/imgView_streetIcon"
+                   android:background="@color/editTextBG"
+                   android:hint="@string/acc_straat"
+                   android:paddingStart="20dp"
+                   android:textSize="15sp" />
+
+       </RelativeLayout>
+
+       <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+           <RelativeLayout
+                   android:id="@+id/relativeLayout4"
+                   android:layout_width="185dp"
+                   android:layout_height="38dp"
+                   android:layout_marginStart="30dp"
+                   android:layout_marginEnd="10dp"
+                   android:layout_marginTop="15dp">
+
+               <ImageView
+                       android:id="@+id/imgView_cityIcon"
+                       android:layout_width="40dp"
+                       android:layout_height="40dp"
+                       android:background="@color/colorPrimary"
+                       android:padding="8dp"
+                       android:contentDescription="@string/image"
+                       android:src="@drawable/icon_home"
+                       android:tint="@color/white"/>
+
+               <EditText
+                       android:id="@+id/acc_city"
+                       android:layout_width="112dp"
+                       android:layout_height="match_parent"
+                       android:layout_alignParentTop="true"
+                       android:layout_toEndOf="@+id/imgView_cityIcon"
+                       android:background="@color/editTextBG"
+                       android:hint="@string/acc_city"
+                       android:inputType="text"
+                       android:paddingStart="20dp"
+                       android:textSize="15sp" android:layout_marginBottom="0dp"
+                       android:layout_alignParentBottom="true"/>
+           </RelativeLayout>
+
+           <RelativeLayout
+                   android:id="@+id/relativeLayout5"
+                   android:layout_width="150dp"
+                   android:layout_height="wrap_content"
+                   android:layout_marginLeft="5dp"
+                   android:layout_marginRight="30dp"
+                   android:layout_marginTop="15dp">
+
+               <ImageView
+                       android:id="@+id/imgView_postIcon"
+                       android:layout_width="40dp"
+                       android:layout_height="40dp"
+                       android:background="@color/colorPrimary"
+                       android:padding="8dp"
+                       android:contentDescription="@string/image"
+                       android:src="@drawable/icon_home"
+                       android:tint="@color/white"/>
+
+               <EditText
+                       android:id="@+id/acc_post"
+                       android:layout_width="112dp"
+                       android:layout_height="match_parent"
+                       android:layout_alignBottom="@+id/imgView_postIcon"
+                       android:layout_alignParentTop="true"
+                       android:layout_toEndOf="@+id/imgView_postIcon"
+                       android:background="@color/editTextBG"
+                       android:hint="@string/acc_post"
+                       android:inputType="number"
+                       android:paddingStart="20dp"
+                       android:textSize="15sp" android:layout_marginBottom="0dp"/>
+
+           </RelativeLayout>
+       </LinearLayout>
+   </LinearLayout>
+    <Button
+            android:id="@+id/acc_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lin2"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="98dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/acc_save"
+            android:textColor="@color/white" />
+</RelativeLayout>

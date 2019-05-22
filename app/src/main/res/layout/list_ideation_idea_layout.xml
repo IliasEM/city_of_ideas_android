@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:animateLayoutChanges="true"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <android.support.v7.widget.CardView
+            android:id="@+id/list_idea_item"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:elevation="10dp"
+            app:cardCornerRadius="15dp" android:layout_margin="10dp">
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                    android:text="@string/idea_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list_idea_title"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="15dp"
+            />
+            <TextView
+                    android:text="@string/idea_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/list_idea_desc"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp" android:layout_marginBottom="5dp"/>
+            <LinearLayout
+                    android:id="@+id/line_idea_image"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:animateLayoutChanges="true"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+            >
+                <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="150dp" tools:srcCompat="@tools:sample/avatars[0]"
+                        android:contentDescription="@string/image"
+                        android:id="@+id/list_idea_image" android:layout_weight="1"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+</LinearLayout>

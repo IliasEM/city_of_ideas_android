@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+    >
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:gravity="center"
+                android:orientation="vertical">
+            <android.support.v7.widget.CardView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:elevation="12dp"
+                    android:id="@+id/view2"
+                    app:cardCornerRadius="40dp"
+                    android:innerRadius="0dp"
+                    android:shape="ring"
+                    android:thicknessRatio="1.9">
+                <ImageView
+                        android:id="@+id/list_comment_image"
+                        android:layout_height="50dp"
+                        android:layout_width="50dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:layout_width="280dp"
+                          android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/list_comment_user"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_name"/>
+                <TextView
+                        android:id="@+id/list_comment_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_value"/>
+                <TextView
+                        android:id="@+id/list_comment_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comment_date"/>
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent">
+                <ImageButton
+                        android:id="@+id/report_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/image"
+                        android:src="@drawable/ic_report" android:background="@drawable/circle" android:textAlignment="center"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+            android:id="@+id/expand_replies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:orientation="vertical"
+    >
+            <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_replies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+            >
+
+            </android.support.v7.widget.RecyclerView>
+        <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <EditText android:id="@+id/reply_edit"
+                      android:layout_width="240dp" android:layout_height="wrap_content" android:textSize="15sp"/>
+
+            <LinearLayout android:gravity="center" android:layout_width="match_parent" android:layout_height="match_parent">
+                <Button
+                        android:id="@+id/reply_edit_button"
+
+                        android:text="@string/comment_react"
+                        android:textColor="#000000"
+                        android:textSize="12sp"
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/buttonshape"
+                        android:shadowColor="#A8A8A8"
+                        android:shadowDx="0"
+                        android:shadowDy="0"
+                        android:shadowRadius="5"
+                        android:layout_weight="1"
+                />
+            </LinearLayout>
+            <!--
+             <Button android:id="@+id/reply_edit_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Add reply"/>
+            -->
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
