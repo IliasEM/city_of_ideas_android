@@ -80,6 +80,7 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun toolbarSetup() {
         val toolbar = findViewById(R.id.toolbar) as android.support.v7.widget.Toolbar
+        toolbar.setTitle(ProjectActivity.preConfig.getPlatformName())
         setSupportActionBar(toolbar)
     }
 

@@ -1,21 +1,29 @@
 package treecompany.cityofideas.activities.project.phase
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.StrictMode
 import android.provider.MediaStore
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import treecompany.cityofideas.R
+import treecompany.cityofideas.activities.platform.PlatformActivity
+import treecompany.cityofideas.activities.project.project.ProjectActivity
+import treecompany.cityofideas.activities.qrscanner.QrScannerActivity
 import treecompany.cityofideas.api.IMyAPI
 import treecompany.cityofideas.common.Common
 import treecompany.cityofideas.responses.DefaultResponse
@@ -41,6 +49,7 @@ class IdeaAddActivity : AppCompatActivity() {
     companion object {
         lateinit var preConfig: PreConfig
         internal lateinit var mService: IMyAPI
+        private const val ACTIVITY_NUM = 1
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +60,8 @@ class IdeaAddActivity : AppCompatActivity() {
             StrictMode.setThreadPolicy(policy)
         }
         initialise()
+        toolbarSetup()
+        setUpBottomNavigationView()
         addEventHandlers()
     }
 
@@ -136,6 +147,46 @@ class IdeaAddActivity : AppCompatActivity() {
             val f: File = File(picturePath)
             image = f.name
             idea_image.setImageURI(selectedImage)
+        }
+    }
+
+    fun setUpBottomNavigationView(){
+        val bottomNavigationViewEx: BottomNavigationViewEx = findViewById(R.id.bottomNavViewBar) as BottomNavigationViewEx
+        PreConfig.setupBottomNavigationView(bottomNavigationViewEx)
+        enableNavigation(this, bottomNavigationViewEx)
+        val menu : Menu = bottomNavigationViewEx.menu
+        val menuItem : MenuItem = menu.getItem(ACTIVITY_NUM)
+        menuItem.setChecked(true)
+    }
+
+    private fun toolbarSetup() {
+        val toolbar = findViewById(R.id.toolbar) as android.support.v7.widget.Toolbar
+        toolbar.setTitle(ProjectActivity.preConfig.getPlatformName())
+        setSupportActionBar(toolbar)
+    }
+
+    fun enableNavigation(context: Context, view : BottomNavigationViewEx){
+        view.onNavigationItemSelectedListener = object: BottomNavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when(item.itemId){
+                    R.id.ic_house -> {
+                        val intent = Intent(context, ProjectActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(0,0)
+                    }
+                    R.id.ic_platform ->{
+                        val intent = Intent(context, PlatformActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    }
+                    R.id.ic_qr_code->{
+                        val intent = Intent(context, QrScannerActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                    }
+                }
+                return false
+            }
         }
     }
 

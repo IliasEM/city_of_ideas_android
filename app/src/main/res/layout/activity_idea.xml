@@ -1,93 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/backgroundcolor"
         tools:context=".activities.project.phase.IdeaActivity">
-    <LinearLayout android:id="@+id/lin1" android:orientation="vertical" android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                tools:srcCompat="@tools:sample/avatars[0]"
-                android:id="@+id/idea_image_upload"
-                android:layout_marginTop="15dp"
-                android:contentDescription="@string/image"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-        />
-        <TextView
-                android:text="@string/idea_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/idea_title"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-        />
-        <TextView
-                android:text="@string/idea_desc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/idea_desc"
-                android:layout_margin="15dp"
-        />
-    </LinearLayout>
-    <LinearLayout android:gravity="center"  android:id="@+id/lin2" android:layout_below="@+id/lin1" android:orientation="horizontal" android:layout_width="match_parent"
-                  android:layout_height="wrap_content">
-        <LinearLayout  android:orientation="vertical" android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" android:layout_marginEnd="15dp">
-            <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/idea_detail_likeButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/lightgray"
-                    app:rippleColor="@color/lightgray"
-                    app:borderWidth="0dp"
-                    app:elevation="6dp"
 
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_like_not"
-                    app:fabSize="normal"
-                    android:textAlignment="center"
-            />
-            <TextView android:id="@+id/idea_detail_likes" android:textSize="12sp" android:textAlignment="center" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        </LinearLayout>
-        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
-                      android:layout_height="wrap_content">
-            <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/idea_add_comment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/lightgray"
-                    app:rippleColor="@color/lightgray"
-                    app:borderWidth="0dp"
-                    app:elevation="6dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_comment"
-                    app:fabSize="normal"
-                    android:textAlignment="center"
-            />
-            <TextView android:textAlignment="center"  android:text="@string/comment_react" android:textSize="12sp" android:layout_width="match_parent" android:layout_height="wrap_content"/>
-        </LinearLayout>
-    </LinearLayout>
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:background="@color/backgroundcolor">
 
-    <LinearLayout android:orientation="vertical" android:layout_below="@+id/lin2" android:layout_width="match_parent"
-                  android:layout_height="match_parent">
-        <TextView
+        <!--Top toolbar-->
+        <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/comments"
-                android:textStyle="bold"
-                android:textSize="20sp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-        />
-        <android.support.v7.widget.RecyclerView
+                android:id="@+id/relLayout1"
+        >
+            <include layout="@layout/layout_top_tabs" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <!--Middle section-->
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/reycler_comments"/>
-    </LinearLayout>
-</RelativeLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/relLayout2"
+                android:layout_below="@+id/relLayout1"
+                android:layout_above="@+id/bottom_id"
+        >
+            <LinearLayout android:id="@+id/lin1" android:orientation="vertical" android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        tools:srcCompat="@tools:sample/avatars[0]"
+                        android:id="@+id/idea_image_upload"
+                        android:layout_marginTop="15dp"
+                        android:contentDescription="@string/image"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                />
+                <TextView
+                        android:text="@string/idea_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/idea_title"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                />
+                <TextView
+                        android:text="@string/idea_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/idea_desc"
+                        android:layout_margin="15dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@+id/lin2" android:layout_below="@+id/lin1"
+                          android:orientation="horizontal" android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" android:layout_marginEnd="15dp">
+                    <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/idea_detail_likeButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/lightgray"
+                            app:rippleColor="@color/lightgray"
+                            app:borderWidth="0dp"
+                            app:elevation="6dp"
+
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_like_not"
+                            app:fabSize="normal"
+                            android:textAlignment="center"
+                    />
+                    <TextView android:id="@+id/idea_detail_likes" android:textSize="12sp" android:textAlignment="center"
+                              android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                              android:layout_height="wrap_content">
+                    <android.support.design.widget.FloatingActionButton
+                            android:id="@+id/idea_add_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/lightgray"
+                            app:rippleColor="@color/lightgray"
+                            app:borderWidth="0dp"
+                            app:elevation="6dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_comment"
+                            app:fabSize="normal"
+                            android:textAlignment="center"
+                    />
+                    <TextView android:textAlignment="center" android:text="@string/comment_react" android:textSize="12sp"
+                              android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:orientation="vertical" android:layout_below="@+id/lin2"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/comments"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="15dp"
+                />
+                <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/reycler_comments"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <!--Bottom navigation-->
+        <include layout="@layout/layout_bottom_navigation_view"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

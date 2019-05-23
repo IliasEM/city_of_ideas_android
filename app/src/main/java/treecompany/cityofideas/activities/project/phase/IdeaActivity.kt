@@ -1,18 +1,25 @@
 package treecompany.cityofideas.activities.project.phase
 
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.os.StrictMode
+import android.support.design.widget.BottomNavigationView
 import android.support.design.widget.FloatingActionButton
+import android.support.design.widget.TabLayout
+import android.support.v4.view.ViewPager
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.InputType
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -20,10 +27,16 @@ import io.reactivex.functions.Consumer
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_idea.*
 import treecompany.cityofideas.R
+import treecompany.cityofideas.activities.platform.PlatformActivity
 import treecompany.cityofideas.activities.profile.AccountActivity
+import treecompany.cityofideas.activities.project.project.ProjectActivity
+import treecompany.cityofideas.activities.qrscanner.QrScannerActivity
 import treecompany.cityofideas.adapters.ideation.CommentAdapter
 import treecompany.cityofideas.api.IMyAPI
 import treecompany.cityofideas.common.Common
+import treecompany.cityofideas.fragments.project.ProjectAllFragment
+import treecompany.cityofideas.fragments.project.ProjectPopularFragment
+import treecompany.cityofideas.fragments.project.SectionsProjectPagerAdapter
 import treecompany.cityofideas.models.ProjectClasses.IdeationClasses.Comment
 import treecompany.cityofideas.responses.CommentAddResponse
 import treecompany.cityofideas.responses.IdeaResponse
@@ -54,6 +67,7 @@ class IdeaActivity : AppCompatActivity() {
     companion object {
         lateinit var preConfig: PreConfig
         internal lateinit var mService: IMyAPI
+        private const val ACTIVITY_NUM = 1
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,6 +78,8 @@ class IdeaActivity : AppCompatActivity() {
             StrictMode.setThreadPolicy(policy)
         }
         initialise()
+        toolbarSetup()
+        setUpBottomNavigationView()
         ideaId = intent.getStringExtra("ideaid")
         getIncomingIntent()
 
@@ -254,6 +270,46 @@ class IdeaActivity : AppCompatActivity() {
         return finalImage[0]
     }
 
+    fun setUpBottomNavigationView(){
+        val bottomNavigationViewEx: BottomNavigationViewEx = findViewById(R.id.bottomNavViewBar) as BottomNavigationViewEx
+        PreConfig.setupBottomNavigationView(bottomNavigationViewEx)
+        enableNavigation(this, bottomNavigationViewEx)
+        val menu : Menu = bottomNavigationViewEx.menu
+        val menuItem : MenuItem = menu.getItem(ACTIVITY_NUM)
+        menuItem.setChecked(true)
+    }
+
+    private fun toolbarSetup() {
+        val toolbar = findViewById(R.id.toolbar) as android.support.v7.widget.Toolbar
+        toolbar.setTitle(ProjectActivity.preConfig.getPlatformName())
+        setSupportActionBar(toolbar)
+    }
+
+    fun enableNavigation(context: Context, view : BottomNavigationViewEx){
+        view.onNavigationItemSelectedListener = object: BottomNavigationView.OnNavigationItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                when(item.itemId){
+                    R.id.ic_house -> {
+                        val intent = Intent(context, ProjectActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(0,0)
+                    }
+                    R.id.ic_platform ->{
+                        val intent = Intent(context, PlatformActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    }
+                    R.id.ic_qr_code->{
+                        val intent = Intent(context, QrScannerActivity::class.java)
+                        context.startActivity(intent)
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+                    }
+                }
+                return false
+            }
+        }
+    }
+
     override fun finish() {
         super.finish()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
@@ -263,5 +319,4 @@ class IdeaActivity : AppCompatActivity() {
         super.onDestroy()
         compositeDisposable.clear()
     }
-
 }
